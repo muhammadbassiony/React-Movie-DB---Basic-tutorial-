@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 
-import API from '../API';
+// import API from '../API';
 
 import  HeroImage from './HeroImage';
 import Grid from './Grid';

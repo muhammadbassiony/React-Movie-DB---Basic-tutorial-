@@ -1,18 +1,26 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-import { Image } from "./Thumb.styles";
 
-const Thumb = ({ image, title, movieId, clickable }) => (
-    <div>
-        {
-            clickable ? (<Link to={`/${movieId}`}>
-                <Image src={image} alt='movie-img'></Image>
-            </Link>) : (<Image src={image} alt='movie-img'></Image>)
-        }
-        
-        <h3>{title}</h3>
-    </div>
+import { Image } from './Thumb.styles';
+
+const Thumb = ({ image, movieId, clickable }) => (
+  <div>
+    {clickable ? (
+      <Link to={`/${movieId}`}>
+        <Image src={image} alt='movie-thumb' />
+      </Link>
+    ) : (
+      <Image src={image} alt='movie-thumb' />
+    )}
+  </div>
 );
+
+Thumb.propTypes = {
+  image: PropTypes.string,
+  movieId: PropTypes.number,
+  clickable: PropTypes.bool
+};
 
 export default Thumb;
